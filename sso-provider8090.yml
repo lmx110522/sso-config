@@ -1,0 +1,42 @@
+server:
+  port: 8090
+spring:
+  application:
+    name: service-provider
+  datasource:
+    driver-class-name: com.alibaba.druid.proxy.DruidDriver
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://192.168.13.132:3306/sso
+    username: root
+    password: root
+#   数据源其他配置
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+#   配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+    filters: stat,wall,log4j
+    maxPoolPreparedStatementPerConnectionSize: 20
+    useGlobalDataSourceStat: true
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: service-provider8090
+info:
+  company: "南阳理工"
+  message: "服务提供方8090"
