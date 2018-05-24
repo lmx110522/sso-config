@@ -3,11 +3,8 @@ server:
 spring:
   application:
     name: service-provider
-  rabbitmq:
-    port: 5672
-    host: 192.168.13.132
   datasource:
-    driver-class-name: com.alibaba.druid.proxy.DruidDriver
+    driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     url: jdbc:mysql://192.168.13.132:3306/sso
     username: root
