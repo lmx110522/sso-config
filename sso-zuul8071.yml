@@ -1,0 +1,24 @@
+server:
+  port: 8071
+
+spring:
+  application:
+    name: sso-zull8071
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+  instance:
+    instance-id: zull8071
+    prefer-ip-address: true
+
+zuul:
+  routes:
+    myUser.serviceId: service-provider
+    myUser.path: /myUser/**
+    prefix: /user
+  #ignored-patterns: /service-provider
+#management:
+#  security:
+#    enabled: false
+
