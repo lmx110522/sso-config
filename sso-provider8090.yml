@@ -6,7 +6,7 @@ spring:
   datasource:
     driver-class-name: com.alibaba.druid.proxy.DruidDriver
     type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://192.168.13.132:3306/sso
+    url: jdbc:mysql:///sso
     username: root
     password: root
 #   数据源其他配置
