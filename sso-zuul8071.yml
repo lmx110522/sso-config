@@ -4,6 +4,7 @@ server:
 spring:
   application:
     name: sso-zull8071
+  profiles: dev
 eureka:
   client:
     service-url:
