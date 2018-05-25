@@ -9,4 +9,4 @@ spring:
   profiles: dev
 feign:
   hystrix:
-    enabled: true
+    enabled: false
