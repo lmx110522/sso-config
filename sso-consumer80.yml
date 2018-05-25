@@ -8,7 +8,6 @@ eureka:
 spring:
   rabbitmq:
     host: 192.168.13.132
-  profiles: dev
 feign:
   hystrix:
     enabled: true
